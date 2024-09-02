@@ -48,9 +48,12 @@ class SetupBootstrapJQuery extends Command
         File::copy('node_modules/@popperjs/core/dist/umd/popper.min.js', public_path('js/popper.min.js'));
         File::copy('node_modules/jquery/dist/jquery.min.js', public_path('js/jquery.min.js'));
 
-        // Create blade to incllude in the head file
+        // Ensure the 'imports' directory exists in the 'views' directory
+        $this->info('Ensuring directory imports exists...');
+        File::ensureDirectoryExists(resource_path('views/imports')); // Corrigido: Certifique-se de que o diretório existe
+
+        // Create the blade file to include in the head
         $this->info('Creating bootstrap-jquery.blade.php ...');
-        File::ensureDirectoryExists(resource_path('view/imports'));
 
         $bladeContent = <<<'EOT'
 <!-- Includes Bootstrap -->
@@ -62,10 +65,11 @@ class SetupBootstrapJQuery extends Command
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 EOT;
 
+        // Now create the blade file
         File::put(resource_path('views/imports/bootstrap-jquery.blade.php'), $bladeContent);
 
         $this->info('Setup completed successfully!');
-        $this->info('Write in your blade between <head>...</head>: @include("imports.bootstrap-jquery")');
+        $this->info('Write in your blade between <head>@include("imports.bootstrap-jquery")</head>');
 
         return Command::SUCCESS;
     }
