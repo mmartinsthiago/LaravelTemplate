@@ -12,6 +12,7 @@ This templates simplifies and set ready to use Bootstrap and JQuery.
 - type this in your terminal: ```$ git clone https://github.com/mmartinsthiago/LaravelTemplate.git```;
 - type this in your terminal: ```$ sudo chmod +x bootstrap-jquery.sh```;
 - type this in your terminal: ```$ ./bootstrap-jquery.sh```;
+    - In here you will be asked the project name, answear it and press *"Enter"*;
 - paste this inside the blade with your ```head.../head```: ```@include('imports.bootstrap-jquery')```.
 
 With this steps you will be able to use classes from bootstrap and the jquery's codes.
