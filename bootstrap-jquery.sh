@@ -49,4 +49,6 @@ clear
 
 echo "Your project $project_name is ready for development!"
 sleep 2
+clear
+echo "Paste @include('imports.bootstrap-jquery') inside your head's blade!"
 echo "Bye!"
