@@ -40,7 +40,7 @@ clear
 # Install Bootstrap and jQuery
 echo "Installing Bootstrap and jQuery ..."
 npm install
-npm install bootstrap @popperjs/core jquery
+npm install bootstrap @popperjs/core jquery bootstrap-icons
 npm install sass
 clear
 echo "Bootstrap and jQuery installed!"
