@@ -6,8 +6,8 @@ composer install
 composer dump-autoload
 echo "------------------------------------------"
 echo "Laravel dependencies installed!"
-sleep 3
 echo "=========================================="
+sleep 3
 
 
 # Install Bootstrap and jQuery
@@ -18,8 +18,22 @@ npm install bootstrap @popperjs/core jquery bootstrap-icons
 npm install sass
 echo "------------------------------------------"
 echo "Bootstrap and jQuery installed!"
-sleep 3
 echo "=========================================="
+sleep 3
+
+# Copy .env.example
+echo "=========================================="
+echo "Copying .env.example ..."
+cp .env.example .env
+echo "------------------------------------------"
+echo ".env created!"
+echo "------------------------------------------"
+echo "Generating key ..."
+php artisan key:generate
+echo "------------------------------------------"
+echo "Key generated!"
+echo "=========================================="
+sleep 3
 
 echo "=========================================="
 echo "Your project is ready for development!"
